@@ -1,0 +1,7 @@
+export('simData')
+import("SummarizedExperiment")
+import("doseR")
+importFrom("stats", "rgamma", "rnbinom")
+importFrom("S4Vectors", "DataFrame")
+import("RUnit")
+import("edgeR")

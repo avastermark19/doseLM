@@ -1,0 +1,19 @@
+Package: doseLM
+Type: Package
+Title: doseLM
+Version: 0.99.1
+Author: AJ Vaestermark, JR Walters.
+Maintainer: ake.vastermark <ake.vastermark@gmail.com>
+Description: doseLM is a testing platform for dosage compensation analyses using established differential sequencing analysis tools, including edgeR.
+Imports: edgeR, doseR, SummarizedExperiment, S4Vectors, RUnit, stats
+License: GPL
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    BiocStyle,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+biocViews: 	Infrastructure, Software, DataRepresentation, DifferentialExpression, Sequencing
+Depends: R (>= 3.6)

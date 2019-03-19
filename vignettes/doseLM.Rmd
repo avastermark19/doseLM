@@ -1,0 +1,32 @@
+---
+title: "doseLM"
+author: "AJ Vaestermark, JR Walters."
+date: "`r Sys.Date()`"
+output: BiocStyle::html_document
+vignette: >
+    %\VignetteIndexEntry{"doseR"}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+collapse = TRUE,
+comment = "#>"
+)
+```
+---
+
+doseLM is a testing platform for dosage compensation analyses using established differential sequencing analysis tools, including edgeR.
+
+Once installed, you must load the package.
+
+```{r}
+library(doseLM)
+library(SummarizedExperiment)
+```
+
+```{r}
+se <- simData(FA=100)
+str(se)
+```
