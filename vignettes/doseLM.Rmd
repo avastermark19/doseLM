@@ -22,11 +22,51 @@ doseLM is a testing platform for dosage compensation analyses using established 
 Once installed, you must load the package.
 
 ```{r}
+library(edgeR)
 library(doseLM)
+library(doseR)
 library(SummarizedExperiment)
 ```
 
 ```{r}
-se <- simData(FA=100)
-str(se)
 ```
+
+#       MF	  MF	  MF	MF+AZ	MF+AZ	MF*AZ
+#       MF+AZ	MF*AZ	AZ	MF*AZ	AZ	  AZ
+#Type1  1	    1	    ***	1	    1	    1
+#Type2  ***	  **	  ***	1	    1	    1
+#Type3  1	    ***	  1	  ***	  ***	  ***
+#Type4  *	    ***	  1	  ***	  ***	  ***
+#Type5  1	    *	    1	  *	    ***	  ***
+
+```{r}
+#par(mfrow=c(1,5)) 
+type1 <- simData() ; # you get sig result for the comparison between just MF and just AZ
+ type2 <- simData(FZ=1, MZ=1) ; #you get sig result for comparison between just MF and all the other 3
+ type3 <- simData(MZ=1) ; # you get sig result for all comparisons except: justMF and MF+AZ, just MF and just AZ
+ type4 <- simData(FZ=100) ; # interaction effect, secondd one sig (same as type 3)
+ type5 <- simData(FA= 100, FZ=100) ; #you get sig result for all comparisons except: justMF and MF+AZ, just MF and just AZ
+```
+
+```{r}
+ d1(type1)
+d1(type2)
+d1(type3)
+d1(type4)
+d1(type5)
+```
+
+```{r}
+ d0(type1)
+d0(type2)
+d0(type3)
+d0(type4)
+d0(type5)
+```
+
+Results from d0
+
+type2 , clearly A biased
+type3 clearly Z 
+
+

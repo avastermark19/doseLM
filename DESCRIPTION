@@ -5,7 +5,7 @@ Version: 0.99.1
 Author: AJ Vaestermark, JR Walters.
 Maintainer: ake.vastermark <ake.vastermark@gmail.com>
 Description: doseLM is a testing platform for dosage compensation analyses using established differential sequencing analysis tools, including edgeR.
-Imports: edgeR, doseR, SummarizedExperiment, S4Vectors, RUnit, stats
+Imports: edgeR, doseR, SummarizedExperiment, S4Vectors, RUnit, stats, limma
 License: GPL
 Encoding: UTF-8
 LazyData: true
